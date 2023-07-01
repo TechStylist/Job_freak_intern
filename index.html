@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Left Panel Navigation</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #content {
+            flex-grow: 1;
+            padding: 0px 10px 10px 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 3vh;
+            font-family: Gilroy;
+            font-weight: 400
+        }
+
+        a {
+            display: inline-block;
+            position: relative;
+            color: #fff;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .active {
+            font-weight: bold;
+        }
+
+        i {
+            margin-right: 1vw;
+            font-size: 20px;
+            font-weight: 400;
+            color: #fff;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div id="left-panel">
+        <ul>
+            <li><i class="ri-home-3-line"></i><a href="#" class="active" onclick="showContent('home')">Home</a></li>
+            <li><i class="ri-information-line"></i><a href="#" onclick="showContent('information')">Information</a></li>
+            <li><i class="ri-shopping-bag-3-line"></i><a href="#" onclick="showContent('Collections')">Collections</a></li>
+            <li><i class="ri-contacts-line"></i><a href="#" onclick="showContent('contact')">Contact</a></li>
+        </ul>
+    </div>
+
+    <div id="content">
+        <div style="position: relative;width: 100%;height: 100vh;left: 0%;background-color: #776c65;overflow-x: hidden;overflow-y: hidden;"
+            id="one">
+            <div style="width: 100%;height:100vh;" class="image">
+                <small
+                    style="position: absolute;top:33%;left:50%;transform: translate(-50%,0%);color: #fff;;z-index: 99;font-weight: 600;text-align: center;font-family: Gilroy;font-size: 2vh;">S
+                    T Y L E Y O U R S E L F </small>
+                <h1
+                    style="position: absolute;top:30%;left:50%;transform: translate(-50%,0%);color: #fff;;z-index: 99;font-size: 13vh;font-weight: 400;">
+                    ETHNIC</h1>
+                <h1
+                    style="position: absolute;top:40%;left:50%;transform: translate(-50%,0%);color: #fff;;z-index: 99;font-size: 13vh;font-weight: 400;">
+                    FOOTWEAR</h1>
+                <p
+                    style="opacity:1;position: absolute;top:60%;left:50%;transform: translate(-50%,0%);color: #fff;;z-index: 99;font-weight: 400;text-align: center;font-family: Gilroy;font-size: 1.8vh;">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora aliquid dolore ex excepturi debitis
+                    libero,
+                    esse quaerat eveniet illum sit rem eum, quidem, voluptatem autem assumenda nam omnis!</p>
+                <h4></h4>
+                <img style="width:96%;height:90vh;object-fit:cover;position: absolute;top: 5vh;left: 2%;"
+                    src="https://images.unsplash.com/photo-1511980995225-25360cb0aa29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80)"
+                    alt="">
+                <img id="img" style="width:90%;height:90vh;object-fit:contain;position: absolute;top: 150%;left: 5%;"
+                    src="https://images.unsplash.com/photo-1511980995225-25360cb0aa29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80)"
+                    alt="">
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function showContent(component) {
+            var contentDiv = document.getElementById("content");
+            var links = document.getElementsByTagName("a");
+
+            for (var i = 0; i < links.length; i++) {
+                links[i].classList.remove("active");
+            }
+
+            switch (component) {
+                case "home":
+                    contentDiv.innerHTML = `    <div id="content">
+        <div style="position: relative;width: 100%;height: 100vh;left: 0%;background-color: #776c65;overflow-x: hidden;overflow-y: hidden;"
+            id="one">
+            <div style="width: 100%;height:100vh;" class="image">
+                <small
+                    style="position: absolute;top:33%;left:50%;transform: translate(-50%,0%);color: #fff;;z-index: 99;font-weight: 600;text-align: center;font-family: Gilroy;font-size: 2vh;">S
+                    T Y L E Y O U R S E L F </small>
+                <h1
+                    style="position: absolute;top:30%;left:50%;transform: translate(-50%,0%);color: #fff;;z-index: 99;font-size: 13vh;font-weight: 400;">
+                    ETHNIC</h1>
+                <h1
+                    style="position: absolute;top:40%;left:50%;transform: translate(-50%,0%);color: #fff;;z-index: 99;font-size: 13vh;font-weight: 400;">
+                    FOOTWEAR</h1>
+                <p
+                    style="opacity:1;position: absolute;top:60%;left:50%;transform: translate(-50%,0%);color: #fff;;z-index: 99;font-weight: 400;text-align: center;font-family: Gilroy;font-size: 1.8vh;">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora aliquid dolore ex excepturi debitis
+                    libero,
+                    esse quaerat eveniet illum sit rem eum, quidem, voluptatem autem assumenda nam omnis!</p>
+                <h4></h4>
+                <img style="width:96%;height:90vh;object-fit:cover;position: absolute;top: 5vh;left: 2%;"
+                    src="https://images.unsplash.com/photo-1511980995225-25360cb0aa29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80)"
+                    alt="">
+                <img id="img" style="width:90%;height:90vh;object-fit:contain;position: absolute;top: 150%;left: 5%;"
+                    src="https://images.unsplash.com/photo-1511980995225-25360cb0aa29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80)"
+                    alt="">
+            </div>
+        </div>
+    </div>`;
+                    break;
+                case "contact":
+                    contentDiv.innerHTML = ` <div style="width:100%;height:100vh;background-color:#1C201E;position: absolute;top: 1%; display: flex; justify-content: space-between; align-items: center;padding: 15vh 15vw;" id="four">
+    <h1 style="font-size: 7vh;font-family: Gilroy;color:#fff;position: relative;top: -19vh;left:-12%">Style in <br> your own <br>way</h1>
+    <div style="position:absolute;top:24%;left:20%;font-family: Gilroy;">
+      <h1 style="color:#918781">Learn</h1>
+      <a href="#">About</a><br><br><a href="#">Culture</a><br><br><a href="#">Delivery</a>
+    </div>
+    <div style="position:absolute;top:24%;left:30%;font-family: Gilroy;">
+      <h1 style="color:#918781">Explore</h1>
+      <a href="#">Work</a><br><br><a href="#">Service</a><br><br><a href="#">Careers</a>
+    </div>
+    <div style="position:absolute;top:24%;left:40%;font-family: Gilroy;">
+      <h1 style="color:#918781">Find us</h1>
+      <a href="#">Customer Care</a><br><br><a href="#">Contact Details</a><br><br><a href="#">FAQ</a>
+    </div>
+    <div style="position:absolute;left:56%;top:45vh ;color:#fff;rotate: 90deg;" id="icon">
+      <i style="font-size:2.5vh ;" class="ri-instagram-line"></i>
+      <i style="font-size:2.5vh ;" class="ri-twitter-fill"></i>
+      <i style="font-size:2.5vh ;" class="ri-facebook-circle-line"></i>
+
+  </div>
+    </div>`;
+                    break;
+                case "Collections":
+                    contentDiv.innerHTML = `   <div style="d-flex;justify-content-space-between" id="content">
+        <div style="position: relative;width: 100%;height: 100vh;left: 0%;background-color: #776c65;overflow-x: hidden;overflow-y: hidden;"
+            id="one">  
+            <div
+        style="width: 25vw;height:65vh;background-image: url(https://images.unsplash.com/photo-1511980995225-25360cb0aa29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80);background-position: center;background-size: cover;margin-top: -50vh;position: absolute;left:0vw;top:60% ;z-index: 999;"
+        id="right"></div>
+            <div
+        style="width: 25vw;height:65vh;background-image: url(https://images.unsplash.com/photo-1521144236085-322e24bfa95a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80);background-position: center;background-size: cover;margin-top: -50vh;position: absolute;left:27.5vw;top:60% ;z-index: 999;"
+        id="right"></div>
+            <div
+        style="width: 25vw;height:65vh;background-image: url(https://images.unsplash.com/photo-1611611579717-630efd40526e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80);background-position: center;background-size: cover;margin-top: -50vh;position: absolute;left:55vw;top:60% ;z-index: 999;"
+        id="right"></div>
+       <h1 style="color:white;position: absolute;top:75%;left:39%";>Fashion YourSelf!!</h1> <p style="position: absolute;top:80%;left:35%;text-align:center;font-size:4vh;font-weight:700;">Here is Our Latest Collections <br> of jeans</p>
+  
+    </div>`;
+                    break;
+                case "information":
+                    contentDiv.innerHTML = ` <div id="content">
+        <div style="position: relative;width: 100%;height: 100vh;left: 0%;background-color: #fff;overflow-x: hidden;overflow-y: hidden;"
+            id="one">
+      <div
+        style="width: 20vw;height:50vh;background-image: url(https://images.unsplash.com/photo-1602250523342-d2212b96a297?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80);background-position:top;background-size: cover;margin-top: 15vh;position: relative;left: 0vw;z-index: 99;"
+        id="left">
+
+
+      </div>
+      <div
+        style="width: 32vw;height:70vh;background-image: url(https://images.unsplash.com/photo-1511980995225-25360cb0aa29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80);background-position: center;background-size: cover;margin-top: -50vh;position: absolute;left:25vw ;z-index: 999;"
+        id="right"></div>
+      <div
+        style="height:70vh;color: #fff;margin-right: 8vw;margin-top: -50vh;position: absolute;z-index: 9999;right: -4vw;mix-blend-mode: difference;"
+        id="text1">
+        <h1 style="font-weight: 400;font-size: 12vh;margin-left: 15vw;">FOOTWEAR</h1>
+        <h1 style="font-weight: 400;font-size: 12vh;margin-left: 15vw;margin-top: -10vh;">STYLING</h1>
+        <h1 style="font-weight: 400;font-size: 12vh;margin-top: -10vh;margin-left: 15vw;">CHICAGO / IL</h1>
+      </div>
+
+    </div>`;
+                    break;
+                case "guide":
+                    contentDiv.innerHTML = "<h1>Guide</h1><p>This is the Guide page content.</p>";
+                    break;
+            }
+
+            event.target.classList.add("active");
+        }
+  
+ 
+    </script>
+</body>
+
+</html>
+
+
